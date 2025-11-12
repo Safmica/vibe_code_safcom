@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AstraNova Labs - Company Profile Website
+
+A futuristic company profile website for AstraNova Labs, built with Next.js 14+ App Router. Features include particle backgrounds, smooth animations, SEO optimization, and responsive design.
+
+## Features
+
+- **Futuristic Design**: Blue-black gradient theme with particle animations
+- **Responsive**: Mobile-first design with hamburger menu
+- **SEO Optimized**: Metadata, sitemap, robots.txt, structured data
+- **Animations**: Framer Motion for smooth transitions
+- **Modern Stack**: Next.js, Tailwind CSS, TypeScript
+
+## Pages
+
+- **Home**: Hero section, services, team highlight, contact preview
+- **About**: Vision, mission, values, timeline
+- **Contact**: Contact form, info, social media
 
 ## Getting Started
 
-First, run the development server:
-
+1. Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Run development server:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Open [http://localhost:3000](http://localhost:3000)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Build for Production
 
-## Learn More
+```bash
+npm run build
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy to Vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Push to GitHub
+2. Connect to Vercel
+3. Deploy automatically
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Technologies Used
 
-## Deploy on Vercel
+- Next.js 14+ (App Router)
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- @tsparticles/react
+- Inter Font
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Asset Placeholders
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Check `public/assets/needed-assets.txt` for required assets to replace placeholders.
