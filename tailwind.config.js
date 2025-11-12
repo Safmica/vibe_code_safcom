@@ -9,7 +9,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)', 'Inter', 'sans-serif'],
+        sans: ['Helvetica', 'Arial', 'sans-serif'],
+        heading: ['var(--font-heading)', 'Exo 2', 'sans-serif'],
       },
       colors: {
         SafCom: {

@@ -1,13 +1,22 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Exo_2 } from "next/font/google";
 import { ThemeProvider } from 'next-themes';
 import "./globals.css";
 import ThemeColorMeta from '@/components/ui/ThemeColorMeta';
 
-const inter = Inter({
+const exo2 = Exo_2({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-heading",
+  display: 'swap',
 });
+
+const helvetica = {
+  style: {
+    fontFamily: 'Helvetica, Arial, sans-serif',
+  },
+  className: 'font-helvetica',
+  variable: '--font-body',
+};
 
 export const metadata: Metadata = {
   title: "SafCom - Innovative Technology Solutions by Safar & Safarudin",
@@ -74,7 +83,12 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} font-sans antialiased bg-linear-to-br from-[#000814] to-[#02112b] dark:from-[#000814] dark:to-[#02112b] light:from-[#f9fafc] light:to-[#e2e8f0] text-white dark:text-white light:text-[#0a0a0a] min-h-screen transition-colors duration-500`}
+        className={`${exo2.variable} font-sans antialiased min-h-screen transition-colors duration-500`}
+        style={{
+          fontFamily: 'Helvetica, Arial, sans-serif',
+          background: 'var(--background)',
+          color: 'var(--text-primary)'
+        }}
       >
         <ThemeProvider
           attribute="class"

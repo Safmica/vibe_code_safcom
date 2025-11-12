@@ -13,7 +13,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl sm:text-6xl lg:text-7xl font-bold text-(--text-primary) mb-6"
+          className="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold text-(--text-primary) mb-6"
         >
           SafCom
         </motion.h1>
