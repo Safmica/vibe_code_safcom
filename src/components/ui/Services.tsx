@@ -19,7 +19,7 @@ const Services = () => {
   const services = [
     {
       title: t('footer.services.web'),
-      description: 'Custom software solutions tailored to your business needs, built with modern technologies and best practices.',
+      description: t('services.web.description'),
       icon: Code,
       gradient: 'from-blue-500 to-cyan-500',
       delay: 0.1,
@@ -27,7 +27,7 @@ const Services = () => {
     },
     {
       title: t('footer.services.mobile'),
-      description: 'Scalable cloud solutions on Azure, AWS, or GCP to ensure your applications run efficiently and securely.',
+      description: t('services.mobile.description'),
       icon: Smartphone,
       gradient: 'from-purple-500 to-pink-500',
       delay: 0.3,
@@ -35,7 +35,7 @@ const Services = () => {
     },
     {
       title: t('footer.services.ai'),
-      description: 'Cutting-edge AI solutions including machine learning models, data analytics, and intelligent automation.',
+      description: t('services.ai.description'),
       icon: Brain,
       gradient: 'from-green-500 to-emerald-500',
       delay: 0.5,
@@ -43,7 +43,7 @@ const Services = () => {
     },
     {
       title: t('footer.services.cloud'),
-      description: 'Strategic consulting to help your business adopt emerging technologies and stay ahead of the competition.',
+      description: t('services.cloud.description'),
       icon: Cloud,
       gradient: 'from-orange-500 to-red-500',
       delay: 0.7,
