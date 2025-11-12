@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { useTheme } from 'next-themes';
 import { usePathname } from 'next/navigation';
 import { Sun, Moon, Menu, X } from 'lucide-react';
@@ -14,6 +14,7 @@ const Navbar = () => {
   const [windowWidth, setWindowWidth] = useState(0);
   const { theme, setTheme } = useTheme();
   const pathname = usePathname();
+  const navbarRef = useRef<HTMLElement>(null);
 
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
@@ -45,6 +46,34 @@ const Navbar = () => {
       clearTimeout(timeoutId);
     };
   }, []);
+
+  // Update navbar height CSS variable for proper content spacing
+  useLayoutEffect(() => {
+    if (!mounted || !navbarRef.current) return;
+
+    const updateNavbarHeight = () => {
+      if (navbarRef.current) {
+        const navbarHeight = navbarRef.current.offsetHeight;
+        const navbarTop = parseInt(getComputedStyle(navbarRef.current).marginTop) || 0;
+        const totalHeight = navbarHeight + navbarTop;
+        document.documentElement.style.setProperty('--nav-height', `${totalHeight}px`);
+      }
+    };
+
+    // Update immediately
+    updateNavbarHeight();
+
+    // Update after a short delay to ensure animations have completed
+    const timeoutId = setTimeout(updateNavbarHeight, 100);
+
+    // Update on window resize
+    window.addEventListener('resize', updateNavbarHeight);
+
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener('resize', updateNavbarHeight);
+    };
+  }, [mounted, scrolled, windowWidth, theme]);
 
   const navItems = [
     { href: '/home', label: 'Home' },
@@ -92,7 +121,7 @@ const Navbar = () => {
   // Don't render until mounted to prevent hydration mismatch
   if (!mounted) {
     return (
-      <nav className="fixed top-4 z-50 w-full h-16 backdrop-blur-md bg-white/10 dark:bg-black/10">
+      <nav className="fixed top-4 z-50 w-full h-16 backdrop-blur-md bg-white/10 dark:bg-black/10" style={{ marginTop: '16px' }}>
         <div className="w-full h-full px-4 flex justify-center items-center">
           <Link href="/home" className="text-xl font-bold bg-linear-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
             SafCom
@@ -106,6 +135,7 @@ const Navbar = () => {
 
   return (
     <motion.nav
+      ref={navbarRef}
       initial="expanded"
       animate={scrolled ? 'condensed' : 'expanded'}
       variants={navbarVariants}

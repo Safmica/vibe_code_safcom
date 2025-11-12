@@ -37,5 +37,12 @@ body {
   font-family: var(--font-inter);
   background-color: var(--background);
   color: var(--text-primary);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, padding-top 0.3s ease;
+  padding-top: var(--nav-height, 88px); /* 72px navbar + 16px margin-top */
+}
+
+/* Navbar height variables */
+:root {
+  --nav-height-expanded: 88px; /* 72px height + 16px margin-top */
+  --nav-height-condensed: 66px; /* 56px height + 10px margin-top */
 }
