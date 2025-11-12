@@ -1,0 +1,6 @@
+logo/logo.svg
+hero/hero-illustration.png
+team/member1.jpg
+team/member2.jpg
+team/member3.jpg
+og/og-image.png
