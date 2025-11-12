@@ -1,6 +1,6 @@
-# AstraNova Labs - Company Profile Website
+# AstraNova - Company Profile Website
 
-A futuristic company profile website for AstraNova Labs, built with Next.js 14+ App Router. Features include particle backgrounds, smooth animations, SEO optimization, and responsive design.
+A futuristic company profile website for AstraNova, built with Next.js 14+ App Router. Features include particle backgrounds, smooth animations, SEO optimization, and responsive design.
 
 ## Features
 

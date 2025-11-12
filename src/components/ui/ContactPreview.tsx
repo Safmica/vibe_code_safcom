@@ -19,7 +19,7 @@ const ContactPreview = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-xl text-(--text-secondary) mb-8"
         >
-          Let's discuss your project and explore how AstraNova Labs can help bring your vision to life.
+          Let's discuss your project and explore how AstraNova can help bring your vision to life.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 50 }}

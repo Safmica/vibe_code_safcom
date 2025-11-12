@@ -7,8 +7,8 @@ import TeamHighlight from '@/components/ui/TeamHighlight';
 import ContactPreview from '@/components/ui/ContactPreview';
 
 export const metadata = {
-  title: 'Home - AstraNova Labs',
-  description: 'Welcome to AstraNova Labs. Building future technology solutions with integrity and innovation.',
+  title: 'Home - AstraNova',
+  description: 'Welcome to AstraNova. Building future technology solutions with integrity and innovation.',
 };
 
 export default function HomePage() {

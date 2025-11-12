@@ -15,7 +15,7 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="text-5xl sm:text-6xl lg:text-7xl font-bold text-(--text-primary) mb-6"
         >
-          AstraNova Labs
+          AstraNova
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 50 }}

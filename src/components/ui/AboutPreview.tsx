@@ -11,7 +11,7 @@ const AboutPreview = () => {
           transition={{ duration: 0.6 }}
           className="text-4xl font-bold text-(--text-primary) mb-6"
         >
-          About AstraNova Labs
+          About AstraNova
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 50 }}

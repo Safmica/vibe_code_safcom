@@ -10,20 +10,20 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "AstraNova Labs - Building Future Technology Solutions",
-  description: "AstraNova Labs specializes in software development, cloud solutions, and AI R&D. Pioneering ethical and sustainable technology innovations.",
+  title: "AstraNova - Building Future Technology Solutions",
+  description: "AstraNova specializes in software development, cloud solutions, and AI R&D. Pioneering ethical and sustainable technology innovations.",
   keywords: ["technology", "software development", "cloud solutions", "AI research", "innovation"],
-  authors: [{ name: "AstraNova Labs" }],
+  authors: [{ name: "AstraNova" }],
   openGraph: {
-    title: "AstraNova Labs",
+    title: "AstraNova",
     description: "Building future technology solutions with integrity and innovation.",
     url: "https://astranova-labs.com",
-    siteName: "AstraNova Labs",
+    siteName: "AstraNova",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AstraNova Labs",
+    title: "AstraNova",
     description: "Building future technology solutions with integrity and innovation.",
   },
 };
@@ -31,10 +31,10 @@ export const metadata: Metadata = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "AstraNova Labs",
+  "name": "AstraNova",
   "url": "https://astranova-labs.com",
   "logo": "https://astranova-labs.com/logo.png",
-  "description": "AstraNova Labs specializes in software development, cloud solutions, and AI R&D.",
+  "description": "AstraNova specializes in software development, cloud solutions, and AI R&D.",
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+1-555-123-4567",
