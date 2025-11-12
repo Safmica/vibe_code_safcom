@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { ThemeProvider } from 'next-themes';
 import "./globals.css";
+import ThemeColorMeta from '@/components/ui/ThemeColorMeta';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -52,7 +54,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
@@ -62,9 +64,17 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} font-sans antialiased bg-gradient-to-br from-[#000814] to-[#02112b] text-white min-h-screen`}
+        className={`${inter.variable} font-sans antialiased bg-gradient-to-br from-[#000814] to-[#02112b] dark:from-[#000814] dark:to-[#02112b] light:from-[#f9fafc] light:to-[#e2e8f0] text-white dark:text-white light:text-[#0a0a0a] min-h-screen transition-colors duration-500`}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange={false}
+        >
+          <ThemeColorMeta />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

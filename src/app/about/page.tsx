@@ -30,7 +30,7 @@ const milestones = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-(--background)">
       <Navbar />
       <div className="relative">
         <Particles id="about-particles" intensity="medium" />
@@ -42,7 +42,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-5xl font-bold text-white mb-6"
+              className="text-5xl font-bold text-(--text-primary) mb-6"
             >
               About AstraNova Labs
             </motion.h1>
@@ -50,7 +50,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl text-gray-300"
+              className="text-xl text-(--text-secondary)"
             >
               Pioneering the future of technology through innovation, collaboration, and sustainable solutions.
             </motion.p>
@@ -58,17 +58,17 @@ export default function AboutPage() {
         </section>
 
         {/* Vision & Mission */}
-        <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
+        <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 bg-(--surface)/20">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
-                className="bg-white/10 backdrop-blur-md rounded-lg p-8"
+                className="bg-(--surface)/10 backdrop-blur-md rounded-lg p-8 border border-(--border) shadow-lg"
               >
-                <h2 className="text-3xl font-bold text-white mb-4">Our Vision</h2>
-                <p className="text-gray-300 text-lg">
+                <h2 className="text-3xl font-bold text-(--text-primary) mb-4">Our Vision</h2>
+                <p className="text-(--text-secondary) text-lg">
                   To become the leading pioneer in ethical and sustainable technology, shaping a future where innovation serves humanity and the planet.
                 </p>
               </motion.div>
@@ -76,10 +76,10 @@ export default function AboutPage() {
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
-                className="bg-white/10 backdrop-blur-md rounded-lg p-8"
+                className="bg-(--surface)/10 backdrop-blur-md rounded-lg p-8 border border-(--border) shadow-lg"
               >
-                <h2 className="text-3xl font-bold text-white mb-4">Our Mission</h2>
-                <p className="text-gray-300 text-lg">
+                <h2 className="text-3xl font-bold text-(--text-primary) mb-4">Our Mission</h2>
+                <p className="text-(--text-secondary) text-lg">
                   To drive innovation through cutting-edge research, strategic collaboration, and the development of digital solutions that empower businesses and communities.
                 </p>
               </motion.div>
@@ -94,7 +94,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-4xl font-bold text-white text-center mb-12"
+              className="text-4xl font-bold text-(--text-primary) text-center mb-12"
             >
               Our Core Values
             </motion.h2>
@@ -105,10 +105,10 @@ export default function AboutPage() {
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
-                  className="bg-white/10 backdrop-blur-md rounded-lg p-6 text-center"
+                  className="bg-(--surface)/10 backdrop-blur-md rounded-lg p-6 text-center border border-(--border) shadow-lg"
                 >
-                  <h3 className="text-2xl font-semibold text-white mb-4">{value.title}</h3>
-                  <p className="text-gray-300">{value.description}</p>
+                  <h3 className="text-2xl font-semibold text-(--text-primary) mb-4">{value.title}</h3>
+                  <p className="text-(--text-secondary)">{value.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -116,13 +116,13 @@ export default function AboutPage() {
         </section>
 
         {/* Timeline */}
-        <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
+        <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 bg-(--surface)/20">
           <div className="max-w-4xl mx-auto">
             <motion.h2
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-4xl font-bold text-white text-center mb-12"
+              className="text-4xl font-bold text-(--text-primary) text-center mb-12"
             >
               Our Journey
             </motion.h2>
@@ -135,10 +135,10 @@ export default function AboutPage() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="flex items-center"
                 >
-                  <div className="bg-[#0ea5e9] text-white px-4 py-2 rounded-full font-bold mr-6">
+                  <div className="bg-(--accent-primary) text-(--text-inverse) px-4 py-2 rounded-full font-bold mr-6">
                     {milestone.year}
                   </div>
-                  <div className="text-white text-lg">{milestone.event}</div>
+                  <div className="text-(--text-primary) text-lg">{milestone.event}</div>
                 </motion.div>
               ))}
             </div>
@@ -152,7 +152,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-4xl font-bold text-white mb-6"
+              className="text-4xl font-bold text-(--text-primary) mb-6"
             >
               Let's Build the Future Together
             </motion.h2>
@@ -160,7 +160,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl text-gray-300 mb-8"
+              className="text-xl text-(--text-secondary) mb-8"
             >
               Join us in creating innovative solutions that make a difference.
             </motion.p>
@@ -171,7 +171,7 @@ export default function AboutPage() {
             >
               <Link
                 href="/contact"
-                className="bg-[#0ea5e9] hover:bg-[#0284c7] text-white px-8 py-3 rounded-full font-semibold transition-colors"
+                className="bg-(--accent-primary) hover:bg-(--accent-secondary) text-(--text-inverse) px-8 py-3 rounded-full font-semibold transition-colors shadow-lg hover:shadow-xl"
               >
                 Contact Us
               </Link>

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 import type { Container, Engine } from '@tsparticles/engine';
+import { useTheme } from 'next-themes';
 
 interface ParticlesComponentProps {
   id: string;
@@ -12,6 +13,7 @@ interface ParticlesComponentProps {
 
 const ParticlesComponent = ({ id, intensity = 'medium' }: ParticlesComponentProps) => {
   const [init, setInit] = useState(false);
+  const { theme } = useTheme();
 
   useEffect(() => {
     initParticlesEngine(async (engine: Engine) => {
@@ -26,6 +28,12 @@ const ParticlesComponent = ({ id, intensity = 'medium' }: ParticlesComponentProp
   };
 
   const getOptions = () => {
+    const isDark = theme === 'dark';
+    const particleColors = isDark ? ["#00b4ff","#0ea5e9","#60a5fa"] : ["#0b63d6","#7aaefc","rgba(11,18,32,0.06)"];
+    const linkColor = isDark ? '#0ea5e9' : '#0077ff';
+    const opacity = isDark ? 0.18 : 0.10;
+    const density = isDark ? 60 : 45;
+
     const baseOptions = {
       background: {
         color: {
@@ -59,13 +67,13 @@ const ParticlesComponent = ({ id, intensity = 'medium' }: ParticlesComponentProp
       },
       particles: {
         color: {
-          value: '#0ea5e9',
+          value: particleColors,
         },
         links: {
-          color: '#0ea5e9',
+          color: linkColor,
           distance: 150,
           enable: true,
-          opacity: 0.5,
+          opacity: opacity,
           width: 1,
         },
         move: {
@@ -82,10 +90,10 @@ const ParticlesComponent = ({ id, intensity = 'medium' }: ParticlesComponentProp
           density: {
             enable: true,
           },
-          value: 80,
+          value: density,
         },
         opacity: {
-          value: 0.5,
+          value: opacity,
         },
         shape: {
           type: 'circle',

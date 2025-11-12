@@ -33,7 +33,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-(--background)">
       <Navbar />
       <div className="relative">
         <Particles id="contact-particles" intensity="low" />
@@ -45,7 +45,7 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-5xl font-bold text-white mb-6"
+              className="text-5xl font-bold text-(--text-primary) mb-6"
             >
               Contact Us
             </motion.h1>
@@ -53,7 +53,7 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl text-gray-300"
+              className="text-xl text-(--text-secondary)"
             >
               We're ready to discuss your ideas and projects. Let's collaborate to bring your vision to life.
             </motion.p>
@@ -61,17 +61,17 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Form */}
-        <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
+        <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 bg-(--surface)/20">
           <div className="max-w-2xl mx-auto">
             <motion.form
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               onSubmit={handleSubmit}
-              className="bg-white/10 backdrop-blur-md rounded-lg p-8"
+              className="bg-(--surface)/10 backdrop-blur-md rounded-lg p-8 border border-(--border) shadow-lg"
             >
               <div className="mb-6">
-                <label htmlFor="name" className="block text-white font-semibold mb-2">
+                <label htmlFor="name" className="block text-(--text-primary) font-semibold mb-2">
                   Name
                 </label>
                 <input
@@ -81,12 +81,12 @@ export default function ContactPage() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0ea5e9]"
+                  className="w-full px-4 py-3 bg-(--surface)/20 border border-(--border) rounded-lg text-(--text-primary) placeholder-(--text-secondary) focus:outline-none focus:ring-2 focus:ring-(--accent-primary)"
                   placeholder="Your full name"
                 />
               </div>
               <div className="mb-6">
-                <label htmlFor="email" className="block text-white font-semibold mb-2">
+                <label htmlFor="email" className="block text-(--text-primary) font-semibold mb-2">
                   Email
                 </label>
                 <input
@@ -96,12 +96,12 @@ export default function ContactPage() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0ea5e9]"
+                  className="w-full px-4 py-3 bg-(--surface)/20 border border-(--border) rounded-lg text-(--text-primary) placeholder-(--text-secondary) focus:outline-none focus:ring-2 focus:ring-(--accent-primary)"
                   placeholder="your.email@example.com"
                 />
               </div>
               <div className="mb-6">
-                <label htmlFor="message" className="block text-white font-semibold mb-2">
+                <label htmlFor="message" className="block text-(--text-primary) font-semibold mb-2">
                   Message
                 </label>
                 <textarea
@@ -111,14 +111,14 @@ export default function ContactPage() {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0ea5e9] resize-none"
+                  className="w-full px-4 py-3 bg-(--surface)/20 border border-(--border) rounded-lg text-(--text-primary) placeholder-(--text-secondary) focus:outline-none focus:ring-2 focus:ring-(--accent-primary) resize-none"
                   placeholder="Tell us about your project..."
                 />
               </div>
               <button
                 type="submit"
                 disabled={status === 'sending'}
-                className="w-full bg-[#0ea5e9] hover:bg-[#0284c7] disabled:bg-gray-600 text-white py-3 rounded-lg font-semibold transition-colors"
+                className="w-full bg-(--accent-primary) hover:bg-(--accent-secondary) disabled:bg-(--text-secondary) text-(--text-inverse) py-3 rounded-lg font-semibold transition-colors shadow-lg hover:shadow-xl"
               >
                 {status === 'sending' ? 'Sending...' : 'Send Message'}
               </button>
@@ -126,7 +126,7 @@ export default function ContactPage() {
                 <motion.p
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="text-green-400 text-center mt-4"
+                  className="text-green-600 text-center mt-4"
                 >
                   Message sent successfully! We'll get back to you soon.
                 </motion.p>
@@ -135,7 +135,7 @@ export default function ContactPage() {
                 <motion.p
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="text-red-400 text-center mt-4"
+                  className="text-red-600 text-center mt-4"
                 >
                   Failed to send message. Please try again.
                 </motion.p>
@@ -153,30 +153,30 @@ export default function ContactPage() {
               transition={{ duration: 0.6 }}
               className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
             >
-              <div className="bg-white/10 backdrop-blur-md rounded-lg p-6">
-                <h3 className="text-xl font-semibold text-white mb-2">Email</h3>
-                <p className="text-gray-300">contact@astranova-labs.com</p>
+              <div className="bg-(--surface)/10 backdrop-blur-md rounded-lg p-6 border border-(--border) shadow-lg">
+                <h3 className="text-xl font-semibold text-(--text-primary) mb-2">Email</h3>
+                <p className="text-(--text-secondary)">contact@astranova-labs.com</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-md rounded-lg p-6">
-                <h3 className="text-xl font-semibold text-white mb-2">Phone</h3>
-                <p className="text-gray-300">+1 (555) 123-4567</p>
+              <div className="bg-(--surface)/10 backdrop-blur-md rounded-lg p-6 border border-(--border) shadow-lg">
+                <h3 className="text-xl font-semibold text-(--text-primary) mb-2">Phone</h3>
+                <p className="text-(--text-secondary)">+1 (555) 123-4567</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-md rounded-lg p-6">
-                <h3 className="text-xl font-semibold text-white mb-2">Address</h3>
-                <p className="text-gray-300">123 Tech Street<br />Innovation City, IC 12345</p>
+              <div className="bg-(--surface)/10 backdrop-blur-md rounded-lg p-6 border border-(--border) shadow-lg">
+                <h3 className="text-xl font-semibold text-(--text-primary) mb-2">Address</h3>
+                <p className="text-(--text-secondary)">123 Tech Street<br />Innovation City, IC 12345</p>
               </div>
             </motion.div>
           </div>
         </section>
 
         {/* Social Media */}
-        <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
+        <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 bg-(--surface)/20">
           <div className="max-w-4xl mx-auto text-center">
             <motion.h2
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-4xl font-bold text-white mb-8"
+              className="text-4xl font-bold text-(--text-primary) mb-8"
             >
               Follow Us
             </motion.h2>
@@ -186,16 +186,16 @@ export default function ContactPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex justify-center space-x-8"
             >
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#0ea5e9] transition-colors text-2xl">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-(--text-primary) hover:text-(--accent-primary) transition-colors text-2xl">
                 LinkedIn
               </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#0ea5e9] transition-colors text-2xl">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-(--text-primary) hover:text-(--accent-primary) transition-colors text-2xl">
                 GitHub
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#0ea5e9] transition-colors text-2xl">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-(--text-primary) hover:text-(--accent-primary) transition-colors text-2xl">
                 X
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#0ea5e9] transition-colors text-2xl">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-(--text-primary) hover:text-(--accent-primary) transition-colors text-2xl">
                 Instagram
               </a>
             </motion.div>

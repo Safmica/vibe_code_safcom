@@ -10,7 +10,7 @@ import ContactPreview from '@/components/ui/ContactPreview';
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-(--background)">
       <Navbar />
       <Hero />
       <AboutPreview />
