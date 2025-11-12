@@ -95,7 +95,7 @@ const Navbar = () => {
       <nav className="fixed top-4 z-50 w-full h-16 backdrop-blur-md bg-white/10 dark:bg-black/10">
         <div className="w-full h-full px-4 flex justify-center items-center">
           <Link href="/home" className="text-xl font-bold bg-linear-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-            AstraNova
+            SafCom
           </Link>
         </div>
       </nav>
@@ -123,7 +123,7 @@ const Navbar = () => {
             transition={{ duration: 0.3 }}
           >
             <Link href="/home" className="text-xl md:text-2xl font-bold bg-linear-to-r from-(--accent-primary) to-(--accent-secondary) bg-clip-text text-transparent">
-              AstraNova
+              SafCom
             </Link>
           </motion.div>
 

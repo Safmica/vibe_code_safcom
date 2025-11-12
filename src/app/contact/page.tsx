@@ -155,7 +155,7 @@ export default function ContactPage() {
             >
               <div className="bg-(--surface)/10 backdrop-blur-md rounded-lg p-6 border border-(--border) shadow-lg">
                 <h3 className="text-xl font-semibold text-(--text-primary) mb-2">Email</h3>
-                <p className="text-(--text-secondary)">contact@astranova-labs.com</p>
+                <p className="text-(--text-secondary)">contact@SafCom-labs.com</p>
               </div>
               <div className="bg-(--surface)/10 backdrop-blur-md rounded-lg p-6 border border-(--border) shadow-lg">
                 <h3 className="text-xl font-semibold text-(--text-primary) mb-2">Phone</h3>

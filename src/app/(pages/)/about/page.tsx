@@ -5,8 +5,8 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'About - AstraNova',
-  description: 'Learn about AstraNova - our vision, mission, values, and journey in building future technology solutions.',
+  title: 'About - SafCom',
+  description: 'Learn about SafCom - our vision, mission, values, and journey in building future technology solutions.',
 };
 
 const values = [
@@ -25,7 +25,7 @@ const values = [
 ];
 
 const milestones = [
-  { year: '2018', event: 'Founded AstraNova' },
+  { year: '2018', event: 'Founded SafCom' },
   { year: '2020', event: 'Expanded to cloud solutions' },
   { year: '2022', event: 'Launched AI research division' },
   { year: '2024', event: 'Achieved ISO 27001 certification' },
@@ -47,7 +47,7 @@ export default function AboutPage() {
               transition={{ duration: 0.8 }}
               className="text-5xl font-bold text-white mb-6"
             >
-              About AstraNova
+              About SafCom
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 50 }}

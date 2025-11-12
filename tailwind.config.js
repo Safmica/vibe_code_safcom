@@ -12,7 +12,7 @@ module.exports = {
         sans: ['var(--font-inter)', 'Inter', 'sans-serif'],
       },
       colors: {
-        astranova: {
+        SafCom: {
           50: '#f9fbff',
           100: '#e6f3ff',
           200: '#dff3ff',

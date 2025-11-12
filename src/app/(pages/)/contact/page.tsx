@@ -155,7 +155,7 @@ export default function ContactPage() {
             >
               <div className="bg-white/10 backdrop-blur-md rounded-lg p-6">
                 <h3 className="text-xl font-semibold text-white mb-2">Email</h3>
-                <p className="text-gray-300">contact@astranova-labs.com</p>
+                <p className="text-gray-300">contact@SafCom-labs.com</p>
               </div>
               <div className="bg-white/10 backdrop-blur-md rounded-lg p-6">
                 <h3 className="text-xl font-semibold text-white mb-2">Phone</h3>
