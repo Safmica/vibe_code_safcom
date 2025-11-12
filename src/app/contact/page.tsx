@@ -5,8 +5,10 @@ import Footer from '@/components/ui/Footer';
 import Particles from '@/components/ui/Particles';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ContactPage() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -46,7 +48,7 @@ export default function ContactPage() {
               transition={{ duration: 0.8 }}
               className="text-5xl font-bold text-(--text-primary) mb-6"
             >
-              Contact Us
+              {t('contact.title')}
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 50 }}
@@ -54,7 +56,7 @@ export default function ContactPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-xl text-(--text-secondary)"
             >
-              We're ready to discuss your ideas and projects. Let's collaborate to bring your vision to life.
+              {t('contact.subtitle')}
             </motion.p>
           </div>
         </section>
@@ -71,7 +73,7 @@ export default function ContactPage() {
             >
               <div className="mb-6">
                 <label htmlFor="name" className="block text-(--text-primary) font-semibold mb-2">
-                  Name
+                  {t('contact.form.name')}
                 </label>
                 <input
                   type="text"
@@ -86,7 +88,7 @@ export default function ContactPage() {
               </div>
               <div className="mb-6">
                 <label htmlFor="email" className="block text-(--text-primary) font-semibold mb-2">
-                  Email
+                  {t('contact.form.email')}
                 </label>
                 <input
                   type="email"
@@ -101,7 +103,7 @@ export default function ContactPage() {
               </div>
               <div className="mb-6">
                 <label htmlFor="message" className="block text-(--text-primary) font-semibold mb-2">
-                  Message
+                  {t('contact.form.message')}
                 </label>
                 <textarea
                   id="message"
@@ -119,7 +121,7 @@ export default function ContactPage() {
                 disabled={status === 'sending'}
                 className="w-full bg-(--accent-primary) hover:bg-(--accent-secondary) disabled:bg-(--text-secondary) text-(--text-inverse) py-3 rounded-lg font-semibold transition-colors shadow-lg hover:shadow-xl"
               >
-                {status === 'sending' ? 'Sending...' : 'Send Message'}
+                {status === 'sending' ? t('contact.form.sending') : t('contact.form.submit')}
               </button>
               {status === 'success' && (
                 <motion.p
@@ -127,7 +129,7 @@ export default function ContactPage() {
                   animate={{ opacity: 1 }}
                   className="text-green-600 text-center mt-4"
                 >
-                  Message sent successfully! We'll get back to you soon.
+                  {t('contact.form.success')}
                 </motion.p>
               )}
               {status === 'error' && (
@@ -136,7 +138,7 @@ export default function ContactPage() {
                   animate={{ opacity: 1 }}
                   className="text-red-600 text-center mt-4"
                 >
-                  Failed to send message. Please try again.
+                  {t('contact.form.error')}
                 </motion.p>
               )}
             </motion.form>
@@ -153,15 +155,15 @@ export default function ContactPage() {
               className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
             >
               <div className="bg-(--surface)/10 backdrop-blur-md rounded-lg p-6 border border-(--border) shadow-lg">
-                <h3 className="text-xl font-semibold text-(--text-primary) mb-2">Email</h3>
+                <h3 className="text-xl font-semibold text-(--text-primary) mb-2">{t('contact.info.email')}</h3>
                 <p className="text-(--text-secondary)">contact@SafCom-labs.com</p>
               </div>
               <div className="bg-(--surface)/10 backdrop-blur-md rounded-lg p-6 border border-(--border) shadow-lg">
-                <h3 className="text-xl font-semibold text-(--text-primary) mb-2">Phone</h3>
+                <h3 className="text-xl font-semibold text-(--text-primary) mb-2">{t('contact.info.phone')}</h3>
                 <p className="text-(--text-secondary)">+1 (555) 123-4567</p>
               </div>
               <div className="bg-(--surface)/10 backdrop-blur-md rounded-lg p-6 border border-(--border) shadow-lg">
-                <h3 className="text-xl font-semibold text-(--text-primary) mb-2">Address</h3>
+                <h3 className="text-xl font-semibold text-(--text-primary) mb-2">{t('contact.info.address')}</h3>
                 <p className="text-(--text-secondary)">123 Tech Street<br />Innovation City, IC 12345</p>
               </div>
             </motion.div>
@@ -177,7 +179,7 @@ export default function ContactPage() {
               transition={{ duration: 0.6 }}
               className="text-4xl font-bold text-(--text-primary) mb-8"
             >
-              Follow Us
+              {t('contact.follow.title')}
             </motion.h2>
             <motion.div
               initial={{ opacity: 0, y: 50 }}

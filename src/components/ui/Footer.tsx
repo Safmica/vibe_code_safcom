@@ -1,8 +1,10 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Twitter, Instagram } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   const containerVariants = {
@@ -79,7 +81,7 @@ const Footer = () => {
               <h3 className="text-2xl lg:text-3xl font-bold">SafCom</h3>
             </motion.div>
             <p className="text-(--text-secondary) text-sm leading-relaxed mb-4">
-              Empowering Innovation with Safar & Safarudin - Code, Data, and AI Solutions for the Future.
+                              Get in Touch
             </p>
             <motion.div
               whileHover={{ scale: 1.02 }}
@@ -177,7 +179,7 @@ const Footer = () => {
 
           <motion.div variants={itemVariants} className="lg:col-span-1">
             <h4 className="text-(--text-primary) font-semibold text-sm uppercase tracking-wider mb-6">
-              Connect With Us
+              {t('footer.follow')}
             </h4>
             <div className="flex space-x-4">
               {[
@@ -210,7 +212,7 @@ const Footer = () => {
         >
           <div className="text-center">
             <p className="text-(--text-secondary) text-sm">
-              © {currentYear} SafCom by Safar & Safarudin. All Rights Reserved.
+              {t('footer.copyright').replace('{year}', currentYear.toString())}
             </p>
             <p className="text-(--text-secondary)/70 text-xs mt-2">
               Crafted by Safar & Safarudin • Building Tomorrow's Technology Today

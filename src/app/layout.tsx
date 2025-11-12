@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Exo_2 } from "next/font/google";
 import { ThemeProvider } from 'next-themes';
+import { LanguageProvider } from '@/contexts/LanguageContext';
 import "./globals.css";
 import ThemeColorMeta from '@/components/ui/ThemeColorMeta';
 
@@ -96,8 +97,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange={false}
         >
-          <ThemeColorMeta />
-          {children}
+          <LanguageProvider>
+            <ThemeColorMeta />
+            {children}
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

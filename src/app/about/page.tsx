@@ -5,30 +5,32 @@ import Footer from '@/components/ui/Footer';
 import Particles from '@/components/ui/Particles';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-
-const values = [
-  {
-    title: 'Integrity',
-    description: 'We uphold the highest standards of honesty and ethical practices in everything we do.',
-  },
-  {
-    title: 'Collaboration',
-    description: 'We believe in the power of teamwork and partnerships to achieve extraordinary results.',
-  },
-  {
-    title: 'Sustainability',
-    description: 'We are committed to creating technology that benefits both people and the planet.',
-  },
-];
-
-const milestones = [
-  { year: '2018', event: 'Founded SafCom' },
-  { year: '2020', event: 'Expanded to cloud solutions' },
-  { year: '2022', event: 'Launched AI research division' },
-  { year: '2024', event: 'Achieved ISO 27001 certification' },
-];
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function AboutPage() {
+  const { t } = useLanguage();
+
+  const values = [
+    {
+      title: t('about.values.integrity.title'),
+      description: t('about.values.integrity.desc'),
+    },
+    {
+      title: t('about.values.collaboration.title'),
+      description: t('about.values.collaboration.desc'),
+    },
+    {
+      title: t('about.values.sustainability.title'),
+      description: t('about.values.sustainability.desc'),
+    },
+  ];
+
+  const milestones = [
+    { year: '2018', event: t('about.milestones.2018') },
+    { year: '2020', event: t('about.milestones.2020') },
+    { year: '2022', event: t('about.milestones.2022') },
+    { year: '2024', event: t('about.milestones.2024') },
+  ];
   return (
     <div className="min-h-screen bg-(--background)">
       <Navbar />
@@ -44,7 +46,7 @@ export default function AboutPage() {
               transition={{ duration: 0.8 }}
               className="text-5xl font-bold text-(--text-primary) mb-6"
             >
-              About SafCom
+              {t('about.title')}
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 50 }}
@@ -67,9 +69,9 @@ export default function AboutPage() {
                 transition={{ duration: 0.6 }}
                 className="bg-(--surface)/10 backdrop-blur-md rounded-lg p-8 border border-(--border) shadow-lg"
               >
-                <h2 className="text-3xl font-bold text-(--text-primary) mb-4">Our Vision</h2>
+                <h2 className="text-3xl font-bold text-(--text-primary) mb-4">{t('about.vision.title')}</h2>
                 <p className="text-(--text-secondary) text-lg">
-                  To become the leading pioneer in ethical and sustainable technology, shaping a future where innovation serves humanity and the planet.
+                  {t('about.vision.content')}
                 </p>
               </motion.div>
               <motion.div
@@ -78,9 +80,9 @@ export default function AboutPage() {
                 transition={{ duration: 0.6 }}
                 className="bg-(--surface)/10 backdrop-blur-md rounded-lg p-8 border border-(--border) shadow-lg"
               >
-                <h2 className="text-3xl font-bold text-(--text-primary) mb-4">Our Mission</h2>
+                <h2 className="text-3xl font-bold text-(--text-primary) mb-4">{t('about.mission.title')}</h2>
                 <p className="text-(--text-secondary) text-lg">
-                  To drive innovation through cutting-edge research, strategic collaboration, and the development of digital solutions that empower businesses and communities.
+                  {t('about.mission.content')}
                 </p>
               </motion.div>
             </div>
@@ -96,7 +98,7 @@ export default function AboutPage() {
               transition={{ duration: 0.6 }}
               className="text-4xl font-bold text-(--text-primary) text-center mb-12"
             >
-              Our Core Values
+              {t('about.values.title')}
             </motion.h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {values.map((value, index) => (
@@ -124,7 +126,7 @@ export default function AboutPage() {
               transition={{ duration: 0.6 }}
               className="text-4xl font-bold text-(--text-primary) text-center mb-12"
             >
-              Our Journey
+              {t('about.milestones.title')}
             </motion.h2>
             <div className="space-y-8">
               {milestones.map((milestone, index) => (
@@ -154,7 +156,7 @@ export default function AboutPage() {
               transition={{ duration: 0.6 }}
               className="text-4xl font-bold text-(--text-primary) mb-6"
             >
-              Let's Build the Future Together
+              {t('about.cta.title')}
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 50 }}
@@ -162,7 +164,7 @@ export default function AboutPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-xl text-(--text-secondary) mb-8"
             >
-              Join us in creating innovative solutions that make a difference.
+              {t('about.cta.subtitle')}
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -173,7 +175,7 @@ export default function AboutPage() {
                 href="/contact"
                 className="bg-(--accent-primary) hover:bg-(--accent-secondary) text-(--text-inverse) px-8 py-3 rounded-full font-semibold transition-colors shadow-lg hover:shadow-xl"
               >
-                Contact Us
+                {t('about.cta.button')}
               </Link>
             </motion.div>
           </div>

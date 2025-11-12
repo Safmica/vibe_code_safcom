@@ -6,6 +6,8 @@ import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { useTheme } from 'next-themes';
 import { usePathname } from 'next/navigation';
 import { Sun, Moon, Menu, X } from 'lucide-react';
+import LanguageSwitcher from './LanguageSwitcher';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,6 +16,7 @@ const Navbar = () => {
   const [windowWidth, setWindowWidth] = useState(0);
   const { theme, setTheme } = useTheme();
   const pathname = usePathname();
+  const { t } = useLanguage();
   const navbarRef = useRef<HTMLElement>(null);
 
   const toggleTheme = () => {
@@ -72,9 +75,9 @@ const Navbar = () => {
   }, [mounted, scrolled, windowWidth, theme]);
 
   const navItems = [
-    { href: '/home', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/contact', label: 'Contact' },
+    { href: '/home', label: t('nav.home') },
+    { href: '/about', label: t('nav.about') },
+    { href: '/contact', label: t('nav.contact') },
   ];
 
   const isActive = (href: string) => pathname === href;
@@ -173,35 +176,39 @@ const Navbar = () => {
               ))}
             </div>
 
-            {/* Theme Toggle */}
-            {mounted && (
-              <motion.button
-                onClick={toggleTheme}
-                className="p-2 rounded-full bg-(--surface-hover) hover:bg-(--surface) transition-all duration-300 border border-(--border) hover:shadow-lg"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={theme}
-                    initial={{ rotate: -180, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: 180, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    {theme === 'dark' ? (
-                      <Sun className="h-5 w-5 text-(--accent-secondary)" />
-                    ) : (
-                      <Moon className="h-5 w-5 text-(--accent-primary)" />
-                    )}
-                  </motion.div>
-                </AnimatePresence>
-              </motion.button>
-            )}
+            {/* Theme Toggle & Language Switcher */}
+            <div className="flex items-center space-x-3">
+              <LanguageSwitcher />
+              {mounted && (
+                <motion.button
+                  onClick={toggleTheme}
+                  className="p-2 rounded-full bg-(--surface-hover) hover:bg-(--surface) transition-all duration-300 border border-(--border) hover:shadow-lg"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={theme}
+                      initial={{ rotate: -180, opacity: 0 }}
+                      animate={{ rotate: 0, opacity: 1 }}
+                      exit={{ rotate: 180, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      {theme === 'dark' ? (
+                        <Sun className="h-5 w-5 text-(--accent-secondary)" />
+                      ) : (
+                        <Moon className="h-5 w-5 text-(--accent-primary)" />
+                      )}
+                    </motion.div>
+                  </AnimatePresence>
+                </motion.button>
+              )}
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-4">
+          <div className="md:hidden flex items-center space-x-3">
+            <LanguageSwitcher />
             {mounted && (
               <motion.button
                 onClick={toggleTheme}

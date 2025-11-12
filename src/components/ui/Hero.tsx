@@ -3,8 +3,10 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Particles from './Particles';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Hero = () => {
+  const { t } = useLanguage();
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-(--hero-gradient)">
       <Particles id="hero-particles" intensity="high" />
@@ -23,7 +25,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-xl sm:text-2xl text-(--text-secondary) mb-8"
         >
-          Building future technology solutions with integrity and innovation.
+          {t('hero.subtitle')}
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -35,13 +37,13 @@ const Hero = () => {
             href="/contact"
             className="bg-(--accent-primary) hover:bg-(--accent-secondary) text-(--text-inverse) px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            Contact Us
+            {t('hero.contact')}
           </Link>
           <Link
             href="/about"
             className="border border-(--border) hover:border-(--accent-primary) text-(--text-primary) hover:text-(--accent-primary) px-8 py-3 rounded-full font-semibold transition-all duration-300"
           >
-            Learn More
+            {t('hero.learn')}
           </Link>
         </motion.div>
       </div>
