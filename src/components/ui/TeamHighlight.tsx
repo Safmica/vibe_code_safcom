@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Github, Linkedin, Twitter } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Github, Linkedin, Twitter, User } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const TeamHighlight = () => {
@@ -220,8 +220,8 @@ const TeamHighlight = () => {
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ type: 'spring', stiffness: 400 }}
                   >
-                    <div className="w-full h-full bg-linear-to-br from-(--accent-primary) to-(--accent-secondary) rounded-full flex items-center justify-center text-6xl shadow-2xl">
-                      👤
+                    <div className="w-full h-full bg-linear-to-br from-(--accent-primary) to-(--accent-secondary) rounded-full flex items-center justify-center shadow-2xl">
+                      <User className="w-24 h-24 text-white" />
                     </div>
                     {/* Floating particles effect */}
                     <motion.div
