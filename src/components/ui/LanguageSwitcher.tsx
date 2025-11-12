@@ -26,19 +26,19 @@ const LanguageSwitcher = () => {
     <div className="relative">
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 p-2 rounded-full bg-(--surface-hover) hover:bg-(--surface) transition-all duration-300 border border-(--border) hover:shadow-lg"
+        className="flex items-center space-x-1 md:space-x-2 p-1.5 md:p-2 rounded-full bg-(--surface-hover) hover:bg-(--surface) transition-all duration-300 border border-(--border) hover:shadow-lg"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
-        <Languages className="h-4 w-4 text-(--accent-primary)" />
-        <span className="text-sm font-medium text-(--text-primary)">
+        <Languages className="h-3 w-3 md:h-4 md:w-4 text-(--accent-primary)" />
+        <span className="text-xs md:text-sm font-medium text-(--text-primary)">
           {currentLanguage?.flag}
         </span>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.2 }}
         >
-          <ChevronDown className="h-3 w-3 text-(--text-secondary)" />
+          <ChevronDown className="h-2.5 w-2.5 md:h-3 md:w-3 text-(--text-secondary)" />
         </motion.div>
       </motion.button>
 
@@ -60,26 +60,26 @@ const LanguageSwitcher = () => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: -10 }}
               transition={{ duration: 0.2 }}
-              className="absolute right-0 mt-2 w-48 bg-(--surface) border border-(--border) rounded-lg shadow-xl z-50 overflow-hidden"
+              className="absolute right-0 mt-2 w-44 md:w-48 bg-(--surface) border border-(--border) rounded-lg shadow-xl z-50 overflow-hidden"
             >
               {languageOptions.map((lang, index) => (
                 <motion.button
                   key={lang.code}
                   onClick={() => handleLanguageChange(lang.code)}
-                  className={`w-full flex items-center space-x-3 px-4 py-3 text-left hover:bg-(--surface-hover) transition-colors duration-200 ${
+                  className={`w-full flex items-center space-x-2 md:space-x-3 px-3 md:px-4 py-2.5 md:py-3 text-left hover:bg-(--surface-hover) transition-colors duration-200 ${
                     language === lang.code ? 'bg-(--accent-primary)/10 text-(--accent-primary)' : 'text-(--text-primary)'
                   }`}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
                 >
-                  <span className="text-lg">{lang.flag}</span>
-                  <span className="text-sm font-medium">{lang.name}</span>
+                  <span className="text-base md:text-lg">{lang.flag}</span>
+                  <span className="text-xs md:text-sm font-medium truncate">{lang.name}</span>
                   {language === lang.code && (
                     <motion.div
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
-                      className="ml-auto w-2 h-2 bg-(--accent-primary) rounded-full"
+                      className="ml-auto w-1.5 h-1.5 md:w-2 md:h-2 bg-(--accent-primary) rounded-full"
                     />
                   )}
                 </motion.button>
