@@ -52,6 +52,5 @@ npm start
 - @tsparticles/react
 - Inter Font
 
-## Asset Placeholders
-
-Check `public/assets/needed-assets.txt` for required assets to replace placeholders.
+## Note
+> This is just a random project to see how far AI can vibe-code a website on its own
