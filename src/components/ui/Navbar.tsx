@@ -103,15 +103,15 @@ const Navbar = () => {
         marginTop: '16px',
       },
       condensed: {
-        width: isMobile ? '90%' : isTablet ? '60%' : '38%',
-        height: '56px',
+        width: isMobile ? '95%' : isTablet ? '70%' : '48%',
+        height: '64px',
         borderRadius: '9999px',
         left: '50%',
         x: '-50%',
         backgroundColor: condensedBackground,
         border: '1px solid rgba(255, 255, 255, 0.12)',
         boxShadow: '0 4px 24px rgba(0, 0, 0, 0.15)',
-        marginTop: '10px',
+        marginTop: '16px',
       },
     };
   };
@@ -146,22 +146,22 @@ const Navbar = () => {
           {/* Logo */}
           <motion.div
             className="flex items-center"
-            animate={{ scale: scrolled ? 0.9 : 1 }}
+            animate={{ scale: scrolled ? 0.95 : 1 }}
             transition={{ duration: 0.3 }}
           >
-            <Link href="/home" className="text-xl md:text-2xl font-bold bg-linear-to-r from-(--accent-primary) to-(--accent-secondary) bg-clip-text text-transparent">
+            <Link href="/home" className="text-lg md:text-xl lg:text-2xl font-bold bg-linear-to-r from-(--accent-primary) to-(--accent-secondary) bg-clip-text text-transparent">
               SafCom
             </Link>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <div className="flex items-center space-x-8 relative">
+          <div className="hidden md:flex items-center space-x-6 xl:space-x-8">
+            <div className="flex items-center space-x-4 xl:space-x-6 relative">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="relative text-(--text-primary) hover:text-(--accent-primary) transition-colors duration-200"
+                  className="relative text-(--text-primary) hover:text-(--accent-primary) transition-colors duration-200 whitespace-nowrap text-sm xl:text-base"
                 >
                   {item.label}
                   {isActive(item.href) && (
@@ -177,7 +177,7 @@ const Navbar = () => {
             </div>
 
             {/* Theme Toggle & Language Switcher */}
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-2 xl:space-x-3 ml-2 xl:ml-4">
               <LanguageSwitcher />
               {mounted && (
                 <motion.button
@@ -208,35 +208,37 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-3">
-            <LanguageSwitcher />
-            {mounted && (
-              <motion.button
-                onClick={toggleTheme}
-                className="p-2 rounded-full bg-(--surface-hover) hover:bg-(--surface) transition-all duration-300 border border-(--border)"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={theme}
-                    initial={{ rotate: -180, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: 180, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    {theme === 'dark' ? (
-                      <Sun className="h-4 w-4 text-(--accent-secondary)" />
-                    ) : (
-                      <Moon className="h-4 w-4 text-(--accent-primary)" />
-                    )}
-                  </motion.div>
-                </AnimatePresence>
-              </motion.button>
-            )}
+            <div className="flex items-center space-x-2">
+              <LanguageSwitcher />
+              {mounted && (
+                <motion.button
+                  onClick={toggleTheme}
+                  className="p-1.5 rounded-full bg-(--surface-hover) hover:bg-(--surface) transition-all duration-300 border border-(--border)"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={theme}
+                      initial={{ rotate: -180, opacity: 0 }}
+                      animate={{ rotate: 0, opacity: 1 }}
+                      exit={{ rotate: 180, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      {theme === 'dark' ? (
+                        <Sun className="h-4 w-4 text-(--accent-secondary)" />
+                      ) : (
+                        <Moon className="h-4 w-4 text-(--accent-primary)" />
+                      )}
+                    </motion.div>
+                  </AnimatePresence>
+                </motion.button>
+              )}
+            </div>
 
             <motion.button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-(--text-primary) hover:text-(--accent-primary) focus:outline-none p-2"
+              className="text-(--text-primary) hover:text-(--accent-primary) focus:outline-none p-2 ml-2"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
