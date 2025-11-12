@@ -5,17 +5,17 @@ const team = [
   {
     name: 'Alex Johnson',
     role: 'CEO & Founder',
-    image: '/assets/team/member1.jpg', // Placeholder
+    image: '/assets/team/member1.jpg',
   },
   {
     name: 'Sarah Chen',
     role: 'CTO',
-    image: '/assets/team/member2.jpg', // Placeholder
+    image: '/assets/team/member2.jpg',
   },
   {
     name: 'Michael Rodriguez',
     role: 'Lead Developer',
-    image: '/assets/team/member3.jpg', // Placeholder
+    image: '/assets/team/member3.jpg',
   },
 ];
 

@@ -18,7 +18,6 @@ export default function ContactPage() {
     e.preventDefault();
     setStatus('sending');
 
-    // Simulate form submission (replace with actual API call)
     setTimeout(() => {
       setStatus('success');
       setFormData({ name: '', email: '', message: '' });

@@ -47,7 +47,6 @@ const Footer = () => {
         background: 'linear-gradient(135deg, var(--background) 0%, var(--surface) 100%)'
       }}
     >
-      {/* Background gradient overlay */}
       <div
         className="absolute inset-0 opacity-30"
         style={{
@@ -58,7 +57,6 @@ const Footer = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
 
-          {/* Brand Section */}
           <motion.div variants={itemVariants} className="lg:col-span-1">
             <motion.div
               className="mb-4"
@@ -103,9 +101,7 @@ const Footer = () => {
             </motion.div>
           </motion.div>
 
-          {/* Navigation Links */}
           <motion.div variants={itemVariants} className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {/* Company */}
             <div>
               <h4 className="text-(--text-primary) font-semibold text-sm uppercase tracking-wider mb-4">
                 Company
@@ -130,7 +126,6 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Resources */}
             <div>
               <h4 className="text-(--text-primary) font-semibold text-sm uppercase tracking-wider mb-4">
                 Resources
@@ -155,7 +150,6 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Legal */}
             <div>
               <h4 className="text-(--text-primary) font-semibold text-sm uppercase tracking-wider mb-4">
                 Legal
@@ -181,7 +175,6 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Social Links */}
           <motion.div variants={itemVariants} className="lg:col-span-1">
             <h4 className="text-(--text-primary) font-semibold text-sm uppercase tracking-wider mb-6">
               Connect With Us
@@ -211,7 +204,6 @@ const Footer = () => {
           </motion.div>
         </div>
 
-        {/* Copyright */}
         <motion.div
           variants={itemVariants}
           className="mt-12 pt-8 border-t border-(--border)/30"

@@ -47,7 +47,6 @@ const Navbar = () => {
     };
   }, []);
 
-  // Update navbar height CSS variable for proper content spacing
   useLayoutEffect(() => {
     if (!mounted || !navbarRef.current) return;
 
@@ -60,13 +59,10 @@ const Navbar = () => {
       }
     };
 
-    // Update immediately
     updateNavbarHeight();
 
-    // Update after a short delay to ensure animations have completed
     const timeoutId = setTimeout(updateNavbarHeight, 100);
 
-    // Update on window resize
     window.addEventListener('resize', updateNavbarHeight);
 
     return () => {
@@ -83,7 +79,6 @@ const Navbar = () => {
 
   const isActive = (href: string) => pathname === href;
 
-  // Responsive navbar variants
   const getNavbarVariants = () => {
     const isMobile = windowWidth <= 768;
     const isTablet = windowWidth > 768 && windowWidth <= 1024;
@@ -118,7 +113,6 @@ const Navbar = () => {
     };
   };
 
-  // Don't render until mounted to prevent hydration mismatch
   if (!mounted) {
     return (
       <nav className="fixed top-4 z-50 w-full h-16 backdrop-blur-md bg-white/10 dark:bg-black/10" style={{ marginTop: '16px' }}>
